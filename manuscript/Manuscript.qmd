@@ -3,17 +3,17 @@ title: "New paper template"
 subtitle: |
   \raggedright  Author 1^1,2,\*^ , Author 2^1,2^, Author 3^3^, Author 4E^4^ \newline<br>^1^Heidelberg University, Centre for Organismal Studies (COS), 69120 Heidelberg, Germany \newline<br>^2^Affiliation 2 \newline<br>^3^Affiliation 3 \newline<br>^4^Affiliation 4\newline<br>  ^\*^Correspondence: xy@cos.uni-heidelberg.de
 mainfont: Arial
-monofont: DejaVu Sans Mono #Times New Roman
+monofont: Times New Roman
 fontsize: 11pt
 linestretch: 1.2
 linkcolor: blue
 documentclass: article
 crossref:
   fig-title: Figure     # (default is "Figure")
-max-width: 100%
+max-width: 75%
 format:
   html: 
-    embed-resources: true
+    embed-resources: true #if this is set as true then the html file will open the figures otherwise it cannot access the files if sent to someone else in html format
   pdf:
     pdf-engine: xelatex
     number-sections: false
@@ -22,7 +22,7 @@ format:
     margin-top: 0.8in
     margin-bottom: 0.8in
     toc: true
-    keep-tex: true
+    keep-tex: true #intermediate file to generate pdf. can edit this file in latex
     include-in-header:
       text: |
         \usepackage{lineno}
@@ -30,7 +30,7 @@ format:
       text: |
         \linenumbers
 bibliography: references.bib #add bibliography in this file
-csl: elife.csl #change according to journal
+csl: elife.csl #change according to journal csl files can be found specifically for each journal. can also be downloaded from zotero
 ---
 
 ```{r include=FALSE}
@@ -40,7 +40,11 @@ source("../analysis/scripts/statistics_for_paper.R")
 
 # Abstract
 
+*italic* *italic* **bold** ^superscript^
+
 [This]{.underline} is an R **Markdown** *document.* ^Markdown^ is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+ChatGPT has since become the poster child of a broader development: the rise of generative AI that generates novel outputs based on training data. Generative AI can translate text (like DeepL), create imagery (like DALL.E, Midjourney or Stable Diffusion), imitate voices (like VALL-E) — or generate textual responses like ChatGPT and its competitors like BARD, Anthropic Claude, AI Sydney or others that will have come out until this essay is published.
 
 **text in bold** *italic* [underline]{.underline}
 
@@ -97,6 +101,7 @@ knitr::include_graphics("figures/Figure1.png")
 #| echo: false 
 
 knitr::include_graphics("figures/Figure_complex.png")
+
 ```
 
 ## Equations
